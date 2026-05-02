@@ -1,0 +1,179 @@
+[
+  {
+    "title": "Dokumente",
+    "extensions": {
+      ".txt": "Textdatei",
+      ".doc": "Word-Dokument (Legacy-Format)",
+      ".docx": "Word-Dokument",
+      ".xls": "Excel-Tabelle (Legacy-Format)",
+      ".xlsx": "Excel-Tabelle",
+      ".ppt": "PowerPoint-Präsentation (Legacy-Format)",
+      ".pptx": "PowerPoint-Präsentation",
+      ".pdf": "PDF-Dokument"
+    }
+  },
+  {
+    "title": "Bilder",
+    "extensions": {
+      ".jpg": "JPEG-Bild",
+      ".jpeg": "JPEG-Bild",
+      ".png": "PNG-Bild",
+      ".gif": "GIF-Bild",
+      ".bmp": "Bitmap-Bild",
+      ".svg": "SVG-Vektorgrafik",
+      ".ico": "Symboldatei",
+      ".webp": "WebP-Bild"
+    }
+  },
+  {
+    "title": "Video",
+    "extensions": {
+      ".mp4": "MP4-Video",
+      ".avi": "AVI-Video",
+      ".mkv": "MKV-Video",
+      ".mov": "MOV-Video",
+      ".wmv": "WMV-Video",
+      ".webm": "WebM-Video"
+    }
+  },
+  {
+    "title": "Audio",
+    "extensions": {
+      ".mp3": "MP3-Audiodatei",
+      ".wav": "WAV-Audiodatei",
+      ".flac": "FLAC-Audiodatei",
+      ".aac": "AAC-Audiodatei",
+      ".ogg": "OGG-Audiodatei"
+    }
+  },
+  {
+    "title": "Programmierung und Web",
+    "extensions": {
+      ".cs": "C#-Quelldatei",
+      ".cpp": "C++-Quelldatei",
+      ".c": "C-Quelldatei",
+      ".h": "C/C++-Headerdatei",
+      ".js": "JavaScript-Datei",
+      ".ts": "TypeScript-Datei",
+      ".jsx": "React-JSX-Datei",
+      ".tsx": "React-TSX-Datei",
+      ".java": "Java-Quelldatei",
+      ".py": "Python-Skript",
+      ".rb": "Ruby-Skript",
+      ".go": "Go-Quelldatei",
+      ".rs": "Rust-Quelldatei",
+      ".swift": "Swift-Quelldatei",
+      ".kt": "Kotlin-Quelldatei",
+      ".php": "PHP-Skript",
+      ".pl": "Perl-Skript",
+      ".sh": "Shell-Skript",
+      ".lua": "Lua-Skript",
+      ".r": "R-Skript",
+      ".scala": "Scala-Quelldatei",
+      ".dart": "Dart-Quelldatei",
+      ".m": "Objective-C-Quelldatei",
+      ".groovy": "Groovy-Skript",
+      ".json": "JSON-Datei",
+      ".xml": "XML-Datei",
+      ".yaml": "YAML-Datei",
+      ".yml": "YAML-Datei",
+      ".html": "HTML-Datei",
+      ".htm": "HTML-Datei",
+      ".css": "CSS-Datei"
+    }
+  },
+  {
+    "title": "Datenbank",
+    "extensions": {
+      ".sql": "SQL-Quelldatei (Structured Query Language)",
+      ".db": "Allgemeine Datenbankdatei",
+      ".dbf": "Datenbankdatei (dBase/FoxPro)",
+      ".sqlite": "SQLite-Datenbankdatei",
+      ".sqlite3": "SQLite-3-Datenbankdatei",
+      ".mdb": "Microsoft Access-Datenbank (Legacy-Format)",
+      ".accdb": "Microsoft Access-Datenbank",
+      ".frm": "MySQL-Tabellendefinition",
+      ".ibd": "MySQL InnoDB-Datendatei",
+      ".nsf": "Lotus Notes-Datenbank",
+      ".gdb": "InterBase/Firebird-Datenbank",
+      ".pdb": "Programmdatenbank",
+      ".csv": "Kommagetrennte Werte (CSV)",
+      ".tsv": "Tabulatorgetrennte Werte (TSV)",
+      ".bson": "Binäres JSON (MongoDB)",
+      ".parquet": "Apache Parquet spaltenbasiertes Speicherformat",
+      ".pqt": "Parquet-Datendatei"
+    }
+  },
+  {
+    "title": "Schriftarten",
+    "extensions": {
+      ".ttf": "TrueType-Schriftart",
+      ".otf": "OpenType-Schriftart",
+      ".woff": "Web Open Font Format",
+      ".woff2": "Web Open Font Format 2",
+      ".eot": "Embedded OpenType-Schriftart",
+      ".pfb": "PostScript Type 1-Schriftart (Binär)",
+      ".pfm": "PostScript Type 1-Schriftart (Metrik)",
+      ".pfa": "PostScript Type 1-Schriftart (ASCII)",
+      ".afm": "Adobe Font Metrics",
+      ".fnt": "Bitmap-Schriftart",
+      ".bdf": "Bitmap Distribution Format-Schriftart",
+      ".fon": "Windows-Bitmap-Schriftart",
+      ".sfd": "Spline Font Database",
+      ".otc": "OpenType-Sammlung",
+      ".ttc": "TrueType-Sammlung"
+    }
+  },
+  {
+    "title": "Archive und Komprimierung",
+    "extensions": {
+      ".zip": "ZIP-Archivdatei",
+      ".rar": "RAR-Archiv",
+      ".7z": "7-Zip-Archiv",
+      ".tar": "TAR-Archiv",
+      ".gz": "Gnu-Zipped-Archiv",
+      ".iso": "Datenträgerabbild",
+      ".img": "Disk-Image-Datei",
+      ".dmg": "macOS-Disk-Image"
+    }
+  },
+  {
+    "title": "Virtualisierung",
+    "extensions": {
+      ".vdi": "VirtualBox-Abbilddatei",
+      ".vmdk": "VMware-Virtual-Disk",
+      ".vhd": "Virtuelle Festplatte (VHD)",
+      ".vhdx": "Virtuelle Festplatte (VHDX)",
+      ".ova": "Open Virtual Appliance",
+      ".ovf": "Open Virtualization Format",
+      ".qcow2": "QEMU Copy-On-Write-Disk",
+      ".pvm": "Parallels-Virtual-Machine",
+      ".dockerfile": "Docker-Konfigurationsdatei",
+      ".vagrantfile": "Vagrant-Konfigurationsdatei"
+    }
+  },
+  {
+    "title": "Ausführbare Dateien",
+    "extensions": {
+      ".exe": "Ausführbare Anwendung",
+      ".msi": "Windows-Installer-Paket",
+      ".lnk": "Verknüpfung",
+      ".bat": "Batch-Datei",
+      ".cmd": "Windows-Befehlsskript",
+      ".ps1": "PowerShell-Skript"
+    }
+  },
+  {
+    "title": "System",
+    "extensions": {
+      ".dll": "Dynamic Link Library (DLL)",
+      ".sys": "Systemdatei",
+      ".ini": "Konfigurationseinstellungen",
+      ".cfg": "Konfigurationsdatei",
+      ".conf": "Konfigurationsdatei",
+      ".log": "Protokolldatei (Logdatei)",
+      ".tmp": "Temporäre Datei",
+      ".bak": "Sicherungsdatei (Backup)"
+    }
+  }
+]

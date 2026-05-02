@@ -1,0 +1,7 @@
+<png xmlns="http://www.w3.org/2000/png" width="24" height="24" viewBox="0 0 24 24">
+  <path d="M4 4h4.63c.6 0 1.15.32 1.45.82l1.37 2.27c.15.25.43.41.72.41H20c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="#E65100"/>
+  <path d="M20 19H4c-1.1 0-2-.9-2-2V9c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2z" fill="#FF9800"/>
+  <path d="M10 16.5v-6l4-1v6m-4-3l4-1" stroke="#FFF3E0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="9" cy="16.5" r="1" fill="#FFF3E0"/>
+  <circle cx="13" cy="15.5" r="1" fill="#FFF3E0"/>
+</png>

@@ -1,0 +1,272 @@
+<Window x:Class="CalculatorApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NetherOS Calculator"
+        Height="560"
+        Width="380"
+        ResizeMode="CanResize"
+        WindowState="Normal"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        Icon="pack://application:,,,/img/logo.png"
+        PreviewKeyDown="Window_PreviewKeyDown"
+        Focusable="True"
+        Loaded="Window_Loaded"
+        FontFamily="Segoe UI Variable, Segoe UI, system-ui">
+
+    <Window.Resources>
+        <!-- Background Gradient -->
+        <LinearGradientBrush x:Key="AppBackground" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#1E3A8A" Offset="0"/>
+            <GradientStop Color="#0B0F19" Offset="0.6"/>
+            <GradientStop Color="#000000" Offset="1"/>
+        </LinearGradientBrush>
+
+        <!-- Acrylic/Glass Brush for Display -->
+        <SolidColorBrush x:Key="GlassBackground" Color="#0B0F19" Opacity="0.85"/>
+        <SolidColorBrush x:Key="GlassBorder" Color="#334155"/>
+
+        <!-- Button Brushes -->
+        <SolidColorBrush x:Key="NumButtonBg" Color="#1E293B"/>
+        <SolidColorBrush x:Key="NumButtonHover" Color="#334155"/>
+        <SolidColorBrush x:Key="OpButtonBg" Color="#2563EB"/>
+        <SolidColorBrush x:Key="OpButtonHover" Color="#3B82F6"/>
+        <SolidColorBrush x:Key="ClearButtonBg" Color="#DC2626"/>
+        <SolidColorBrush x:Key="ClearButtonHover" Color="#EF4444"/>
+        <SolidColorBrush x:Key="EqualsGradientStart" Color="#3B82F6"/>
+        <SolidColorBrush x:Key="EqualsGradientEnd" Color="#8B5CF6"/>
+
+        <!-- Base Button Style -->
+        <Style x:Key="BaseButton" TargetType="Button">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="MainBorder"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="16"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="MainBorder" Property="Background" Value="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="MainBorder" Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.93" ScaleY="0.93"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Number Button Style -->
+        <Style x:Key="NumButton" TargetType="Button" BasedOn="{StaticResource BaseButton}">
+            <Setter Property="Background" Value="{StaticResource NumButtonBg}"/>
+            <Setter Property="Tag" Value="{StaticResource NumButtonHover}"/>
+        </Style>
+
+        <!-- Operator Button Style -->
+        <Style x:Key="OpButton" TargetType="Button" BasedOn="{StaticResource BaseButton}">
+            <Setter Property="Background" Value="{StaticResource OpButtonBg}"/>
+            <Setter Property="Tag" Value="{StaticResource OpButtonHover}"/>
+        </Style>
+
+        <!-- Clear Button Style -->
+        <Style x:Key="ClearButton" TargetType="Button" BasedOn="{StaticResource BaseButton}">
+            <Setter Property="Background" Value="{StaticResource ClearButtonBg}"/>
+            <Setter Property="Tag" Value="{StaticResource ClearButtonHover}"/>
+        </Style>
+
+        <!-- Title Bar Button Style -->
+        <Style x:Key="TitleBarButton" TargetType="Button">
+            <Setter Property="Width" Value="32"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#94A3B8"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="MainBorder"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="8">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="MainBorder" Property="Background" Value="{Binding Tag, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Equals Button Style -->
+        <Style x:Key="EqualsButton" TargetType="Button" BasedOn="{StaticResource BaseButton}">
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="MainBorder"
+                                CornerRadius="16"
+                                Padding="{TemplateBinding Padding}">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#3B82F6" Offset="0"/>
+                                    <GradientStop Color="#8B5CF6" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="MainBorder" Property="Opacity" Value="0.85"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="MainBorder" Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.93" ScaleY="0.93"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Border Background="{StaticResource AppBackground}"
+            CornerRadius="20"
+            Padding="20">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="30" ShadowDepth="0" Color="#000000" Opacity="0.6"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Title Bar -->
+            <DockPanel Grid.Row="0" Margin="4,0,4,16">
+                <TextBlock Text="Calculator"
+                           FontSize="16"
+                           FontWeight="SemiBold"
+                           Foreground="#94A3B8"
+                           VerticalAlignment="Center"
+                           Margin="20,0,0,0"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="−"
+                            Click="Minimize_Click"
+                            Style="{StaticResource TitleBarButton}"
+                            Tag="#334155"/>
+                    <Button Content="×"
+                            Click="Close_Click"
+                            Style="{StaticResource TitleBarButton}"
+                            Tag="#DC2626"
+                            Margin="4,0,0,0"/>
+                </StackPanel>
+            </DockPanel>
+
+            <!-- Display -->
+            <Border Grid.Row="1"
+                    Background="{StaticResource GlassBackground}"
+                    CornerRadius="20"
+                    Padding="20,16"
+                    Margin="4,0,4,20"
+                    BorderBrush="{StaticResource GlassBorder}"
+                    BorderThickness="1">
+                <TextBox Name="Display"
+                         FontSize="42"
+                         TextAlignment="Right"
+                         VerticalContentAlignment="Center"
+                         IsReadOnly="True"
+                         Text="0"
+                         Background="Transparent"
+                         Foreground="#F1F5F9"
+                         BorderThickness="0"
+                         CaretBrush="Transparent"
+                         SelectionBrush="Transparent"
+                         FontWeight="Medium"/>
+            </Border>
+
+            <!-- Keypad -->
+            <Grid Grid.Row="2" Margin="4,0,4,4">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.ColumnSpan="3" Content="AC" Click="Clear_Click"
+                        Style="{StaticResource ClearButton}" Margin="5"/>
+                <Button Grid.Row="0" Grid.Column="3" Content="÷" Click="Operator_Click"
+                        Style="{StaticResource OpButton}" Margin="5"/>
+
+                <Button Grid.Row="1" Grid.Column="0" Content="7" Click="Number_Click"
+                        Style="{StaticResource NumButton}" Margin="5"/>
+                <Button Grid.Row="1" Grid.Column="1" Content="8" Click="Number_Click"
+                        Style="{StaticResource NumButton}" Margin="5"/>
+                <Button Grid.Row="1" Grid.Column="2" Content="9" Click="Number_Click"
+                        Style="{StaticResource NumButton}" Margin="5"/>
+                <Button Grid.Row="1" Grid.Column="3" Content="×" Click="Operator_Click"
+                        Style="{StaticResource OpButton}" Margin="5"/>
+
+                <Button Grid.Row="2" Grid.Column="0" Content="4" Click="Number_Click"
+                        Style="{StaticResource NumButton}" Margin="5"/>
+                <Button Grid.Row="2" Grid.Column="1" Content="5" Click="Number_Click"
+                        Style="{StaticResource NumButton}" Margin="5"/>
+                <Button Grid.Row="2" Grid.Column="2" Content="6" Click="Number_Click"
+                        Style="{StaticResource NumButton}" Margin="5"/>
+                <Button Grid.Row="2" Grid.Column="3" Content="−" Click="Operator_Click"
+                        Style="{StaticResource OpButton}" Margin="5"/>
+
+                <Button Grid.Row="3" Grid.Column="0" Content="1" Click="Number_Click"
+                        Style="{StaticResource NumButton}" Margin="5"/>
+                <Button Grid.Row="3" Grid.Column="1" Content="2" Click="Number_Click"
+                        Style="{StaticResource NumButton}" Margin="5"/>
+                <Button Grid.Row="3" Grid.Column="2" Content="3" Click="Number_Click"
+                        Style="{StaticResource NumButton}" Margin="5"/>
+                <Button Grid.Row="3" Grid.Column="3" Content="+" Click="Operator_Click"
+                        Style="{StaticResource OpButton}" Margin="5"/>
+
+                <Button Grid.Row="4" Grid.ColumnSpan="2" Content="0" Click="Number_Click"
+                        Style="{StaticResource NumButton}" Margin="5"/>
+                <Button Grid.Row="4" Grid.Column="2" Content="," Click="Decimal_Click"
+                        Style="{StaticResource NumButton}" Margin="5"/>
+                <Button Grid.Row="4" Grid.Column="3" Content="=" Click="Result_Click"
+                        Style="{StaticResource EqualsButton}" Margin="5"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
+

@@ -1,0 +1,26 @@
+{
+    "name": "NetherOS",
+    "short_name": "NetherOS",
+    "description": "NetherOS - custom software for windows 10/11",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "lang": "en",
+    "background_color": "#0f172a", 
+    "theme_color": "#0f172a",
+    "icons": [
+        {
+            "src": "/img/logo-small.svg",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/img/logo.svg",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}

@@ -1,0 +1,108 @@
+<Window x:Class="Explorer.PropertiesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Properties" Height="420" Width="480"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#F8FAFC"
+        FontFamily="Segoe UI, Segoe UI Variable">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="CardBg" Color="#FFFFFF"/>
+        <SolidColorBrush x:Key="BorderBrush" Color="#E2E8F0"/>
+        <SolidColorBrush x:Key="PrimaryText" Color="#0F172A"/>
+        <SolidColorBrush x:Key="SecondaryText" Color="#64748B"/>
+        <SolidColorBrush x:Key="AccentColor" Color="#3B82F6"/>
+        
+        <Style x:Key="PropertyLabel" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="{StaticResource SecondaryText}"/>
+            <Setter Property="Margin" Value="0,0,0,4"/>
+        </Style>
+        
+        <Style x:Key="PropertyValue" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="{StaticResource PrimaryText}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,20">
+            <Border Width="48" Height="48" CornerRadius="12" Background="{StaticResource AccentColor}" Margin="0,0,16,0">
+                <TextBlock x:Name="FileIconEmoji" Text="📄" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock x:Name="FileNameText" Text="filename.txt" FontSize="18" FontWeight="SemiBold" Foreground="{StaticResource PrimaryText}" TextTrimming="CharacterEllipsis" MaxWidth="350"/>
+                <TextBlock x:Name="FileTypeText" Text="Text File" FontSize="13" Foreground="{StaticResource SecondaryText}" Margin="0,2,0,0"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Border Grid.Row="1" Background="{StaticResource CardBg}" CornerRadius="16" Padding="20" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" Opacity="0.08" ShadowDepth="4" Direction="270" Color="#0F172A"/>
+            </Border.Effect>
+            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Location" Style="{StaticResource PropertyLabel}" Margin="0,0,0,16"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" x:Name="LocationText" Text="C:\Users\..." Style="{StaticResource PropertyValue}" Margin="0,0,0,16"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Size" Style="{StaticResource PropertyLabel}" Margin="0,0,0,16"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" x:Name="SizeText" Text="1.5 MB" Style="{StaticResource PropertyValue}" Margin="0,0,0,16"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Extension" Style="{StaticResource PropertyLabel}" Margin="0,0,0,16"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" x:Name="ExtensionText" Text=".txt" Style="{StaticResource PropertyValue}" Margin="0,0,0,16"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Type" Style="{StaticResource PropertyLabel}" Margin="0,0,0,16"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" x:Name="TypeText" Text="Text File" Style="{StaticResource PropertyValue}" Margin="0,0,0,16"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Category" Style="{StaticResource PropertyLabel}" Margin="0,0,0,16"/>
+                <Border Grid.Row="4" Grid.Column="1" Background="#EEF2FF" CornerRadius="6" Padding="10,4" HorizontalAlignment="Left" Margin="0,0,0,16">
+                    <TextBlock x:Name="CategoryText" Text="Documents" FontSize="13" Foreground="#3B82F6"/>
+                </Border>
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Path" Style="{StaticResource PropertyLabel}" Margin="0,0,0,8"/>
+                <TextBlock Grid.Row="5" Grid.Column="1" x:Name="FullPathText" Text="C:\Users\...\file.txt" Style="{StaticResource PropertyValue}" TextTrimming="CharacterEllipsis"/>
+            </Grid>
+        </Border>
+
+        <Button Grid.Row="2" Content="Close" HorizontalAlignment="Right" Margin="0,20,0,0" 
+                Padding="24,10" Background="{StaticResource AccentColor}" Foreground="White" 
+                BorderThickness="0" FontSize="14" Cursor="Hand" Click="CloseButton_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="8" Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#2563EB"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#1D4ED8"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>

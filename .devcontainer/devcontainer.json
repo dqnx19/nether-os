@@ -1,0 +1,13 @@
+{
+  "name": "NetherOS Minimal",
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
+
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "2gb"
+  }
+}

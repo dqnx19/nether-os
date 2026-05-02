@@ -1,0 +1,179 @@
+[
+  {
+    "title": "Documents",
+    "extensions": {
+      ".txt": "Text File",
+      ".doc": "Word Document (Legacy)",
+      ".docx": "Word Document",
+      ".xls": "Excel Spreadsheet (Legacy)",
+      ".xlsx": "Excel Spreadsheet",
+      ".ppt": "PowerPoint Presentation (Legacy)",
+      ".pptx": "PowerPoint Presentation",
+      ".pdf": "PDF Document"
+    }
+  },
+  {
+    "title": "Images",
+    "extensions": {
+      ".jpg": "JPEG Image",
+      ".jpeg": "JPEG Image",
+      ".png": "PNG Image",
+      ".gif": "GIF Image",
+      ".bmp": "Bitmap Image",
+      ".svg": "SVG Image",
+      ".ico": "Icon File",
+      ".webp": "WebP Image"
+    }
+  },
+  {
+    "title": "Video",
+    "extensions": {
+      ".mp4": "MP4 Video",
+      ".avi": "AVI Video",
+      ".mkv": "MKV Video",
+      ".mov": "MOV Video",
+      ".wmv": "WMV Video",
+      ".webm": "WebM Video"
+    }
+  },
+  {
+    "title": "Audio",
+    "extensions": {
+      ".mp3": "MP3 Audio File",
+      ".wav": "WAV Audio File",
+      ".flac": "FLAC Audio File",
+      ".aac": "AAC Audio File",
+      ".ogg": "OGG Audio File"
+    }
+  },
+  {
+    "title": "Programming and Web",
+    "extensions": {
+      ".cs": "C# Source File",
+      ".cpp": "C++ Source File",
+      ".c": "C Source File",
+      ".h": "C/C++ Header File",
+      ".js": "JavaScript File",
+      ".ts": "TypeScript File",
+      ".jsx": "React JSX File",
+      ".tsx": "React TSX File",
+      ".java": "Java Source File",
+      ".py": "Python Script",
+      ".rb": "Ruby Script",
+      ".go": "Go Source File",
+      ".rs": "Rust Source File",
+      ".swift": "Swift Source File",
+      ".kt": "Kotlin Source File",
+      ".php": "PHP Script",
+      ".pl": "Perl Script",
+      ".sh": "Shell Script",
+      ".lua": "Lua Script",
+      ".r": "R Script",
+      ".scala": "Scala Source File",
+      ".dart": "Dart Source File",
+      ".m": "Objective-C Source File",
+      ".groovy": "Groovy Script",
+      ".json": "JSON File",
+      ".xml": "XML File",
+      ".yaml": "YAML File",
+      ".yml": "YAML File",
+      ".html": "HTML File",
+      ".htm": "HTML File",
+      ".css": "CSS File"
+    }
+  },
+  {
+    "title": "Database",
+    "extensions": {
+      ".sql": "SQL Structured Query Language File",
+      ".db": "Generic Database File",
+      ".dbf": "Database File (dBase/FoxPro)",
+      ".sqlite": "SQLite Database File",
+      ".sqlite3": "SQLite 3 Database File",
+      ".mdb": "Microsoft Access Database (Legacy)",
+      ".accdb": "Microsoft Access Database",
+      ".frm": "MySQL Table Definition",
+      ".ibd": "MySQL InnoDB Data File",
+      ".nsf": "Lotus Notes Database",
+      ".gdb": "InterBase/Firebird Database",
+      ".pdb": "Program Database",
+      ".csv": "Comma Separated Values",
+      ".tsv": "Tab Separated Values",
+      ".bson": "Binary JSON (MongoDB)",
+      ".parquet": "Apache Parquet Columnar Storage",
+      ".pqt": "Parquet Data File"
+    }
+  },
+  {
+    "title": "Fonts",
+    "extensions": {
+      ".ttf": "TrueType Font",
+      ".otf": "OpenType Font",
+      ".woff": "Web Open Font Format",
+      ".woff2": "Web Open Font Format 2",
+      ".eot": "Embedded OpenType Font",
+      ".pfb": "PostScript Type 1 Font (Binary)",
+      ".pfm": "PostScript Type 1 Font (Metrics)",
+      ".pfa": "PostScript Type 1 Font (ASCII)",
+      ".afm": "Adobe Font Metrics",
+      ".fnt": "Bitmap Font",
+      ".bdf": "Bitmap Distribution Format Font",
+      ".fon": "Windows Bitmap Font",
+      ".sfd": "Spline Font Database",
+      ".otc": "OpenType Collection",
+      ".ttc": "TrueType Collection"
+    }
+  },
+  {
+    "title": "Archives and Compressed",
+    "extensions": {
+      ".zip": "Compressed Zip Folder",
+      ".rar": "RAR Archive",
+      ".7z": "7-Zip Archive",
+      ".tar": "TAR Archive",
+      ".gz": "Gnu Zipped Archive",
+      ".iso": "Disc Image File",
+      ".img": "Disk Image File",
+      ".dmg": "macOS Disk Image"
+    }
+  },
+  {
+    "title": "Virtualization",
+    "extensions": {
+      ".vdi": "VirtualBox Disk Image",
+      ".vmdk": "VMware Virtual Disk",
+      ".vhd": "VHD Virtual Hard Disk",
+      ".vhdx": "Hyper-V Virtual Hard Disk",
+      ".ova": "Open Virtual Appliance",
+      ".ovf": "Open Virtualization Format",
+      ".qcow2": "QEMU Copy-On-Write Disk",
+      ".pvm": "Parallels Virtual Machine",
+      ".dockerfile": "Docker Configuration File",
+      ".vagrantfile": "Vagrant Configuration File"
+    }
+  },
+  {
+    "title": "Executable",
+    "extensions": {
+      ".exe": "Executable Application",
+      ".msi": "Windows Installer Package",
+      ".lnk": "Shortcut Link",
+      ".bat": "Batch File",
+      ".cmd": "Windows Command Script",
+      ".ps1": "PowerShell Script"
+    }
+  },
+  {
+    "title": "System",
+    "extensions": {
+      ".dll": "Dynamic Link Library",
+      ".sys": "System File",
+      ".ini": "Configuration Settings",
+      ".cfg": "Configuration File",
+      ".conf": "Config File",
+      ".log": "Log File",
+      ".tmp": "Temporary File",
+      ".bak": "Backup File"
+    }
+  }
+]

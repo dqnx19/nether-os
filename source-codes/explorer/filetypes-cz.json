@@ -1,0 +1,179 @@
+[
+  {
+    "title": "Dokumenty",
+    "extensions": {
+      ".txt": "Textový soubor",
+      ".doc": "Word dokument (starší formát)",
+      ".docx": "Word dokument",
+      ".xls": "Excel tabulka (starší formát)",
+      ".xlsx": "Excel tabulka",
+      ".ppt": "PowerPoint prezentace (starší formát)",
+      ".pptx": "PowerPoint prezentace",
+      ".pdf": "Dokument PDF"
+    }
+  },
+  {
+    "title": "Obrázky",
+    "extensions": {
+      ".jpg": "Obrázek JPEG",
+      ".jpeg": "Obrázek JPEG",
+      ".png": "Obrázek PNG",
+      ".gif": "Obrázek GIF",
+      ".bmp": "Bitmapový obrázek",
+      ".svg": "Vektorový obrázek SVG",
+      ".ico": "Soubor ikony",
+      ".webp": "Obrázek WebP"
+    }
+  },
+  {
+    "title": "Video",
+    "extensions": {
+      ".mp4": "Video MP4",
+      ".avi": "Video AVI",
+      ".mkv": "Video MKV",
+      ".mov": "Video MOV",
+      ".wmv": "Video WMV",
+      ".webm": "Video WebM"
+    }
+  },
+  {
+    "title": "Audio",
+    "extensions": {
+      ".mp3": "Audio soubor MP3",
+      ".wav": "Audio soubor WAV",
+      ".flac": "Audio soubor FLAC",
+      ".aac": "Audio soubor AAC",
+      ".ogg": "Audio soubor OGG"
+    }
+  },
+  {
+    "title": "Programování a Web",
+    "extensions": {
+      ".cs": "Zdrojový soubor C#",
+      ".cpp": "Zdrojový soubor C++",
+      ".c": "Zdrojový soubor C",
+      ".h": "Hlavičkový soubor C/C++",
+      ".js": "JavaScriptový soubor",
+      ".ts": "TypeScriptový soubor",
+      ".jsx": "React JSX soubor",
+      ".tsx": "React TSX soubor",
+      ".java": "Zdrojový soubor Java",
+      ".py": "Python skript",
+      ".rb": "Ruby skript",
+      ".go": "Zdrojový soubor Go",
+      ".rs": "Zdrojový soubor Rust",
+      ".swift": "Zdrojový soubor Swift",
+      ".kt": "Zdrojový soubor Kotlin",
+      ".php": "PHP skript",
+      ".pl": "Perl skript",
+      ".sh": "Shell skript",
+      ".lua": "Lua skript",
+      ".r": "R skript",
+      ".scala": "Zdrojový soubor Scala",
+      ".dart": "Zdrojový soubor Dart",
+      ".m": "Zdrojový soubor Objective-C",
+      ".groovy": "Groovy skript",
+      ".json": "Soubor JSON",
+      ".xml": "Soubor XML",
+      ".yaml": "Soubor YAML",
+      ".yml": "Soubor YAML",
+      ".html": "Soubor HTML",
+      ".htm": "Soubor HTML",
+      ".css": "Styl CSS"
+    }
+  },
+  {
+    "title": "Databáze",
+    "extensions": {
+      ".sql": "Soubor strukturovaného dotazovacího jazyka SQL",
+      ".db": "Obecný databázový soubor",
+      ".dbf": "Databázový soubor (dBase/FoxPro)",
+      ".sqlite": "Databázový soubor SQLite",
+      ".sqlite3": "Databázový soubor SQLite 3",
+      ".mdb": "Databáze Microsoft Access (starší formát)",
+      ".accdb": "Databáze Microsoft Access",
+      ".frm": "Definice tabulky MySQL",
+      ".ibd": "Datový soubor MySQL InnoDB",
+      ".nsf": "Databáze Lotus Notes",
+      ".gdb": "Databáze InterBase/Firebird",
+      ".pdb": "Programová databáze",
+      ".csv": "Hodnoty oddělené čárkou",
+      ".tsv": "Hodnoty oddělené tabulátorem",
+      ".bson": "Binární JSON (MongoDB)",
+      ".parquet": "Sloupcové úložiště Apache Parquet",
+      ".pqt": "Datový soubor Parquet"
+    }
+  },
+  {
+    "title": "Písma",
+    "extensions": {
+      ".ttf": "Písmo TrueType",
+      ".otf": "Písmo OpenType",
+      ".woff": "Web Open Font Format",
+      ".woff2": "Web Open Font Format 2",
+      ".eot": "Embedded OpenType Font",
+      ".pfb": "Písmo PostScript Type 1 (binární)",
+      ".pfm": "Písmo PostScript Type 1 (metrika)",
+      ".pfa": "Písmo PostScript Type 1 (ASCII)",
+      ".afm": "Adobe Font Metrics",
+      ".fnt": "Bitmapové písmo",
+      ".bdf": "Bitmap Distribution Format Font",
+      ".fon": "Bitmapové písmo Windows",
+      ".sfd": "Spline Font Database",
+      ".otc": "Kolekce OpenType",
+      ".ttc": "Kolekce TrueType"
+    }
+  },
+  {
+    "title": "Archivy a komprimované soubory",
+    "extensions": {
+      ".zip": "Komprimovaná složka ZIP",
+      ".rar": "Archiv RAR",
+      ".7z": "Archiv 7-Zip",
+      ".tar": "Archiv TAR",
+      ".gz": "Archiv Gnu Zipped",
+      ".iso": "Soubor obrazu disku",
+      ".img": "Soubor obrazu disku",
+      ".dmg": "Obraz disku macOS"
+    }
+  },
+  {
+    "title": "Virtualizace",
+    "extensions": {
+      ".vdi": "Obraz disku VirtualBox",
+      ".vmdk": "Virtuální disk VMware",
+      ".vhd": "Virtuální pevný disk VHD",
+      ".vhdx": "Virtuální pevný disk Hyper-V",
+      ".ova": "Open Virtual Appliance",
+      ".ovf": "Open Virtualization Format",
+      ".qcow2": "QEMU Copy-On-Write disk",
+      ".pvm": "Virtuální stroj Parallels",
+      ".dockerfile": "Konfigurační soubor Docker",
+      ".vagrantfile": "Konfigurační soubor Vagrant"
+    }
+  },
+  {
+    "title": "Spustitelné soubory",
+    "extensions": {
+      ".exe": "Spustitelná aplikace",
+      ".msi": "Instalační balíček Windows",
+      ".lnk": "Zástupce",
+      ".bat": "Dávkový soubor",
+      ".cmd": "Příkazový skript Windows",
+      ".ps1": "Skript PowerShell"
+    }
+  },
+  {
+    "title": "Systém",
+    "extensions": {
+      ".dll": "Dynamicky linkovaná knihovna",
+      ".sys": "Systémový soubor",
+      ".ini": "Konfigurační nastavení",
+      ".cfg": "Konfigurační soubor",
+      ".conf": "Konfigurační soubor",
+      ".log": "Soubor protokolu (Log)",
+      ".tmp": "Dočasný soubor",
+      ".bak": "Soubor zálohy"
+    }
+  }
+]

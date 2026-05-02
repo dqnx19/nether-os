@@ -1,0 +1,21 @@
+E:\projects-git\nether-os\source-codes\videos\obj\Debug\net10.0-windows\NetherOS Video Player_MarkupCompile.cache
+E:\projects-git\nether-os\source-codes\videos\bin\Debug\net10.0-windows\NetherOS Video Player.exe
+E:\projects-git\nether-os\source-codes\videos\bin\Debug\net10.0-windows\NetherOS Video Player.deps.json
+E:\projects-git\nether-os\source-codes\videos\bin\Debug\net10.0-windows\NetherOS Video Player.runtimeconfig.json
+E:\projects-git\nether-os\source-codes\videos\bin\Debug\net10.0-windows\NetherOS Video Player.dll
+E:\projects-git\nether-os\source-codes\videos\bin\Debug\net10.0-windows\NetherOS Video Player.pdb
+E:\projects-git\nether-os\source-codes\videos\obj\Debug\net10.0-windows\App.baml
+E:\projects-git\nether-os\source-codes\videos\obj\Debug\net10.0-windows\App.g.cs
+E:\projects-git\nether-os\source-codes\videos\obj\Debug\net10.0-windows\NetherOS Video Player.g.resources
+E:\projects-git\nether-os\source-codes\videos\obj\Debug\net10.0-windows\video-player.GeneratedMSBuildEditorConfig.editorconfig
+E:\projects-git\nether-os\source-codes\videos\obj\Debug\net10.0-windows\video-player.AssemblyInfoInputs.cache
+E:\projects-git\nether-os\source-codes\videos\obj\Debug\net10.0-windows\video-player.AssemblyInfo.cs
+E:\projects-git\nether-os\source-codes\videos\obj\Debug\net10.0-windows\video-player.csproj.CoreCompileInputs.cache
+E:\projects-git\nether-os\source-codes\videos\obj\Debug\net10.0-windows\video-player.sourcelink.json
+E:\projects-git\nether-os\source-codes\videos\obj\Debug\net10.0-windows\NetherOS Video Player.dll
+E:\projects-git\nether-os\source-codes\videos\obj\Debug\net10.0-windows\refint\NetherOS Video Player.dll
+E:\projects-git\nether-os\source-codes\videos\obj\Debug\net10.0-windows\NetherOS Video Player.pdb
+E:\projects-git\nether-os\source-codes\videos\obj\Debug\net10.0-windows\video-player.genruntimeconfig.cache
+E:\projects-git\nether-os\source-codes\videos\obj\Debug\net10.0-windows\ref\NetherOS Video Player.dll
+e:\projects-git\nether-os\source-codes\videos\obj\Debug\net10.0-windows\MainWindow.baml
+e:\projects-git\nether-os\source-codes\videos\obj\Debug\net10.0-windows\MainWindow.g.cs

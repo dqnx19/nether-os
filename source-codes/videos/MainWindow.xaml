@@ -1,0 +1,392 @@
+<Window x:Class="VideoPlayerApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NetherOS Video Player"
+        Width="960"
+        Height="680"
+        WindowStartupLocation="CenterScreen"
+        Background="#0B0F19"
+        FontFamily="Segoe UI Variable, Segoe UI, system-ui"
+        AllowsTransparency="False"
+        SnapsToDevicePixels="True">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="BgPrimaryBrush" Color="#0B0F19"/>
+        <SolidColorBrush x:Key="BgSecondaryBrush" Color="#141B2D"/>
+        <SolidColorBrush x:Key="BgTertiaryBrush" Color="#1E293B"/>
+        <SolidColorBrush x:Key="BorderPrimaryBrush" Color="#334155"/>
+        <SolidColorBrush x:Key="TextSecondaryBrush" Color="#94A3B8"/>
+        <LinearGradientBrush x:Key="AccentGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#3B82F6" Offset="0"/>
+            <GradientStop Color="#8B5CF6" Offset="1"/>
+        </LinearGradientBrush>
+
+        <Style x:Key="ModernButton" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource AccentGradient}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="14"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                                         To="1.05" Duration="0:0:0.15"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                                         To="1.05" Duration="0:0:0.15"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                                         To="1.0" Duration="0:0:0.15"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                                         To="1.0" Duration="0:0:0.15"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                                         To="0.95" Duration="0:0:0.08"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                                         To="0.95" Duration="0:0:0.08"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="PreviewMouseUp">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                                         To="1.0" Duration="0:0:0.08"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                                         To="1.0" Duration="0:0:0.08"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SecondaryButton" TargetType="Button">
+            <Setter Property="Background" Value="#1E293B"/>
+            <Setter Property="Foreground" Value="#94A3B8"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="12"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#334155"/>
+                            </Trigger>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                                         To="0.95" Duration="0:0:0.08"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                                         To="0.95" Duration="0:0:0.08"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="PreviewMouseUp">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                                         To="1.0" Duration="0:0:0.08"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                                         To="1.0" Duration="0:0:0.08"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Playlist Panel -->
+        <Border Grid.Column="0"
+                Background="{StaticResource BgSecondaryBrush}"
+                CornerRadius="20"
+                Padding="20"
+                BorderBrush="{StaticResource BorderPrimaryBrush}"
+                BorderThickness="1">
+            <DockPanel>
+                <!-- Header -->
+                <StackPanel DockPanel.Dock="Top" Margin="0,0,0,20">
+                    <DockPanel VerticalAlignment="Center">
+                        <TextBlock Text="Video" FontSize="26" FontWeight="Bold" Foreground="#60A5FA" Margin="0,0,8,0"/>
+                        <TextBlock Text="Player" FontSize="26" FontWeight="SemiBold" Foreground="#64748B"/>
+                    </DockPanel>
+                    <TextBlock Text="Your personal video space" FontSize="12" Foreground="#475569" Margin="0,4,0,0"/>
+                </StackPanel>
+
+                <!-- Add Videos Button -->
+                <Button x:Name="AddVideosButton"
+                        Content="+ Add Videos"
+                        Click="AddVideos_Click"
+                        Height="44"
+                        DockPanel.Dock="Top"
+                        Style="{StaticResource ModernButton}"
+                        Padding="18,8"
+                        Margin="0,0,0,16">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="16" ShadowDepth="0" Color="#3B82F6" Opacity="0.35"/>
+                    </Button.Effect>
+                </Button>
+
+                <!-- Video Count & Stats -->
+                <Border DockPanel.Dock="Top"
+                        Background="#0F172A"
+                        CornerRadius="10"
+                        Padding="14,10"
+                        Margin="0,0,0,14">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Name="VideoCountText"
+                                   Text="0 videos"
+                                   Foreground="#64748B"
+                                   FontSize="12"
+                                   FontWeight="Medium"/>
+                        <TextBlock Grid.Column="1"
+                                   Text="Drag &amp; drop supported"
+                                   Foreground="#475569"
+                                   FontSize="11"/>
+                    </Grid>
+                </Border>
+
+                <!-- Playlist -->
+                <Border DockPanel.Dock="Top"
+                        Background="{StaticResource BgTertiaryBrush}"
+                        CornerRadius="14"
+                        BorderBrush="{StaticResource BorderPrimaryBrush}"
+                        BorderThickness="1">
+                    <ListBox x:Name="PlaylistList"
+                             SelectionChanged="PlaylistList_SelectionChanged"
+                             Background="Transparent"
+                             Foreground="{StaticResource TextSecondaryBrush}"
+                             BorderThickness="0"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                             Padding="8,8,4,8">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <DockPanel Margin="2">
+                                    <TextBlock Text="▶" FontSize="10" Foreground="#3B82F6" Margin="0,0,10,0" VerticalAlignment="Center" Opacity="0.8"/>
+                                    <TextBlock Text="{Binding}"
+                                               VerticalAlignment="Center"
+                                               TextTrimming="CharacterEllipsis"
+                                               FontSize="13"/>
+                                </DockPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Border>
+            </DockPanel>
+        </Border>
+
+        <!-- Spacer Column -->
+        <Rectangle Grid.Column="1" Fill="Transparent"/>
+
+        <!-- Player Panel -->
+        <Border Grid.Column="2"
+                Background="{StaticResource BgSecondaryBrush}"
+                CornerRadius="20"
+                Padding="28"
+                BorderBrush="{StaticResource BorderPrimaryBrush}"
+                BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Header -->
+                <StackPanel Grid.Row="0" Margin="0,0,0,12">
+                    <TextBlock Text="NOW PLAYING" FontSize="14" FontWeight="SemiBold" Foreground="#64748B"/>
+                </StackPanel>
+
+                <!-- Video Title -->
+                <Border Grid.Row="1"
+                        Background="#0B0F19"
+                        CornerRadius="16"
+                        Padding="22,18"
+                        Margin="0,0,0,24"
+                        BorderBrush="{StaticResource BorderPrimaryBrush}"
+                        BorderThickness="1">
+                    <TextBlock x:Name="VideoTitleText"
+                               Text="No video selected"
+                               FontSize="22"
+                               FontWeight="SemiBold"
+                               Foreground="#E2E8F0"
+                               TextTrimming="CharacterEllipsis"
+                               HorizontalAlignment="Center"/>
+                </Border>
+
+                <!-- Main Controls -->
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,28">
+                    <!-- Play/Pause -->
+                    <Button x:Name="PlayPauseButton"
+                            Content="Play"
+                            Width="120"
+                            Height="52"
+                            Click="PlayPauseButton_Click"
+                            Margin="0,0,14,0"
+                            Style="{StaticResource ModernButton}"
+                            FontSize="16"
+                            ToolTip="Play">
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="20" ShadowDepth="0" Color="#3B82F6" Opacity="0.4"/>
+                        </Button.Effect>
+                    </Button>
+
+                    <!-- Stop -->
+                    <Button x:Name="StopButton"
+                            Content="Stop"
+                            Width="120"
+                            Height="52"
+                            Click="StopButton_Click"
+                            Margin="0,0,14,0"
+                            Style="{StaticResource SecondaryButton}"
+                            FontSize="16"
+                            ToolTip="Stop"/>
+
+                    <!-- Volume Control -->
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20,0,0,0">
+                        <TextBlock Text="VOL" FontSize="12" FontWeight="SemiBold" Foreground="#475569" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                        <Slider x:Name="VolumeSlider"
+                                Width="160"
+                                Minimum="0"
+                                Maximum="1"
+                                Value="0.65"
+                                ValueChanged="VolumeSlider_ValueChanged"
+                                Height="4"
+                                VerticalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Video Display Area -->
+                <Border Grid.Row="3"
+                        Background="Transparent"
+                        CornerRadius="18"
+                        BorderBrush="{StaticResource BorderPrimaryBrush}"
+                        BorderThickness="1"
+                        Margin="0,0,0,24">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Video Element -->
+                        <MediaElement x:Name="Player"
+                                      Grid.Row="0"
+                                      Margin="10"
+                                      LoadedBehavior="Manual"
+                                      UnloadedBehavior="Manual"
+                                      MediaOpened="Player_MediaOpened"
+                                      MediaEnded="Player_MediaEnded"
+                                      MediaFailed="Player_MediaFailed"
+                                      Stretch="Uniform">
+                            <MediaElement.Clip>
+                                <RectangleGeometry RadiusX="12" RadiusY="12" Rect="0,0,1000,1000"/>
+                            </MediaElement.Clip>
+                        </MediaElement>
+
+                        <!-- Status text -->
+                        <Border Grid.Row="1" Background="Transparent" Padding="14,10,14,14">
+                            <TextBlock x:Name="StatusText"
+                                       Text="Drop videos in playlist and press Play."
+                                       Foreground="#475569"
+                                       FontSize="13"
+                                       HorizontalAlignment="Center"
+                                       FontStyle="Italic"/>
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <!-- Timeline & Time -->
+                <Grid Grid.Row="4" Margin="0,4,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Progress Slider -->
+                    <Slider x:Name="PositionSlider"
+                            Grid.Row="0"
+                            Minimum="0"
+                            Maximum="100"
+                            ValueChanged="PositionSlider_ValueChanged"
+                            PreviewMouseLeftButtonUp="PositionSlider_PreviewMouseLeftButtonUp"
+                            Height="6"
+                            Margin="0,0,0,10"
+                            VerticalAlignment="Center"/>
+
+                    <!-- Time Labels -->
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock x:Name="CurrentTimeText"
+                                   Text="0:00"
+                                   Foreground="#64748B"
+                                   FontSize="13"
+                                   FontWeight="Medium"
+                                   VerticalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="2"
+                                   x:Name="TotalTimeText"
+                                   Text="0:00"
+                                   Foreground="#64748B"
+                                   FontSize="13"
+                                   FontWeight="Medium"
+                                   VerticalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>
+

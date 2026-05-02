@@ -1,0 +1,22 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="20" width="160" height="160" rx="40" fill="url(#server_grad)" />
+  
+  <rect x="55" y="60" width="90" height="80" rx="10" fill="#1A1A1A" fill-opacity="0.5" />
+  
+  <rect x="65" y="70" width="70" height="4" rx="2" fill="white" fill-opacity="0.3" />
+  <rect x="65" y="80" width="70" height="4" rx="2" fill="white" fill-opacity="0.3" />
+  <rect x="65" y="90" width="70" height="4" rx="2" fill="white" fill-opacity="0.3" />
+  
+  <circle cx="69" cy="115" r="4" fill="#00FF88" /> <circle cx="83" cy="115" r="4" fill="white" fill-opacity="0.4" />
+  <circle cx="97" cy="115" r="4" fill="white" fill-opacity="0.4" />
+
+  <circle cx="125" cy="115" r="12" stroke="white" stroke-width="3" />
+  <rect x="123" y="107" width="4" height="10" rx="2" fill="white" />
+
+  <defs>
+    <linearGradient id="server_grad" x1="20" y1="20" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2c3e50" />
+      <stop offset="1" stop-color="#4ca1af" />
+    </linearGradient>
+  </defs>
+</svg>

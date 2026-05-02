@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>NetherOS Explorer</AssemblyName>
+  </PropertyGroup>
+
+
+
+  <ItemGroup>
+    <Page Update="ZipContentsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\desktop.png" />
+    <Resource Include="img\documents.png" />
+    <Resource Include="img\downloads.png" />
+    <Resource Include="img\folder.png" />
+    <Resource Include="img\music.png" />
+    <Resource Include="img\pictures.png" />
+    <Resource Include="img\videos.png" />
+    <Resource Include="img\disk.png"/>
+    <Resource Include="img\system-disk.png"/>
+    <Resource Include="img\logo.png"/>
+    <Resource Include="img\home.png"/>
+    <Resource Include="img\paste-item.png"/>
+    <Resource Include="img\paste-item.svg"/>
+    <Resource Include="img\rename-icon.png"/>
+    <Resource Include="img\rename-icon.svg"/>
+    <Resource Include="img\cut-item.png"/>
+    <Resource Include="img\cut-item.svg"/>
+    <Resource Include="img\copy-item.png"/>
+    <Resource Include="img\copy-item.svg"/>
+    <None Include="filetypes.json"/>
+  </ItemGroup>
+</Project>

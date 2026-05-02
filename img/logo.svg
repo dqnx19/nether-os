@@ -1,0 +1,23 @@
+<svg width="300" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradText" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7a5cff"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="60" cy="60" r="45" fill="#111" stroke="url(#gradText)" stroke-width="3"/>
+  <path d="M40 80 L40 40 L80 80 L80 40"
+        stroke="url(#gradText)"
+        stroke-width="6"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <text x="120" y="70" font-family="Segoe UI, Arial" font-size="34" fill="#ffffff">
+    Nether
+  </text>
+  <text x="235" y="70" font-family="Segoe UI, Arial" font-size="34" fill="url(#gradText)">
+    OS
+  </text>
+</svg>
